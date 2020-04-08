@@ -1,0 +1,9 @@
+.counter-output {
+    background-color: #cccccc;
+    width: 30%;
+    height: 100px;
+    margin: auto;
+    text-align: center;
+    line-height: 100px;
+    box-sizing: border-box;
+}

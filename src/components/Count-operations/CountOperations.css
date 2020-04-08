@@ -1,0 +1,9 @@
+.count-operations {
+    width: 20%;
+    height: 100px;
+    cursor: pointer;
+    background-color: aqua;
+    float: left;
+    margin-right: 30px;
+    line-height: 100px;
+}

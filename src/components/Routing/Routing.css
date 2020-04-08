@@ -1,0 +1,22 @@
+.routing-links {
+    margin: 50px 0
+}
+
+.routing-links ul {
+    list-style: none;
+    ;
+}
+
+.routing-links a {
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    background-color: #f391f5;
+    text-align: center;
+    text-decoration: none;
+    padding: 14px 25px;
+    
+}
+
+.routing-links a:hover {
+    background-color: #eeeeee;
+}

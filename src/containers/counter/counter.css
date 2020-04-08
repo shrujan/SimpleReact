@@ -1,0 +1,8 @@
+.operation-container {
+    width: 60%;
+    margin: auto;
+    position: relative;
+    height: 100px;
+    text-align: center;
+    padding: 20px;
+}
