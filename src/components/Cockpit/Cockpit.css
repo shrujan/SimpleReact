@@ -1,0 +1,13 @@
+.btn-login {
+    height: 4rem;
+    background-color: #a6a1f9;
+    width: 4rem;
+    cursor: pointer;
+}
+
+.btn-toggle {
+    height: 4rem;
+    background-color: #7eefd5;
+    margin-right: 2rem;
+    cursor: pointer;
+}

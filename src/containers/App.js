@@ -2,6 +2,7 @@ import React, { Component } from 'react'; // impokrt react omponent
 import { Route } from 'react-router-dom'; 
 import axios from 'axios'; // import obj
 import { connect } from 'react-redux';
+import AuthContext from '../context/auth-context'
 
 import logo from '../logo.svg';
 import './App.css';
@@ -30,7 +31,8 @@ class App extends Component {
           { id:'1', name: 'raju', age: 28 },
           { id:'2',name: 'saju', age: 49}
       ],
-      showPersons: false
+      showPersons: false,
+      isAuthenticated: false
     }
   }
 
@@ -109,6 +111,23 @@ class App extends Component {
       
   }
 
+  loginHandler() {
+    /* 
+      This method is a simple authentication method used to demonstrate the createContext 
+      we need the isAuthenticated flag in the inner person component.
+      so to bypass the "persons" component and directly pass the value to "person" component use createContext
+      VID 112, VID 113
+    */
+
+    console.log('here at loging')
+    this.setState((prevState) => {
+        return {
+          ...prevState,
+          isAuthenticated: true
+        }
+    })
+  }
+
 
   render() {
     console.log('**[App.js] Render method')
@@ -146,11 +165,17 @@ class App extends Component {
     return  (
             <div className="App">
                    <div className="people-mgmt">
-                    <Cockpit 
-                      toggleBtn = { this.togglePerson }
-                      title = { this.props.title }
-                      peopleList = { personBlock }
-                      ></Cockpit>
+                     <AuthContext.Provider value={ 
+                        { authenticated: this.state.isAuthenticated, 
+                        login: this.loginHandler.bind(this) } 
+                     } >
+                        <Cockpit 
+                        toggleBtn = { this.togglePerson }
+                        title = { this.props.title }
+                        peopleList = { personBlock }
+                        ></Cockpit>
+                     </AuthContext.Provider>
+                    
                       
                   </div>
                   
